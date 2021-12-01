@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import { ArrowDownward, EmailRounded } from '@material-ui/icons';
 
 import "fontsource-roboto";
@@ -9,15 +10,14 @@ import {
     Typography,
 } from '@material-ui/core/';
 
-export function About(props) {
+export function Landing(props) {
     const classes = props.style()
-
     return (
         <Grid container className={classes.secondaryGrid}>
-            <Grid container justifyContent="center" alignContent="flex-start">
-                <Grid item >
-                    <Typography variant="h1" className={classes.primaryLG}>About Me.</Typography>
-                    <Typography variant="h1" className={classes.primarySM}>
+            <Grid container justifyContent="center" alignContent="flex-end">
+                <Grid item>
+                    <Typography variant="h2" className={classes.primaryLG}>I'm <Typography display="inline" color="primary" className={classes.primaryLG}>Malcolm</Typography>.</Typography>
+                    <Typography variant="h2" className={classes.primarySM}>
                         A full-stack web-developer with a <Typography display="inline" color="primary" className={classes.primarySM}>passion</Typography> for innovation.
                     </Typography>
                 </Grid>
@@ -44,5 +44,6 @@ export function About(props) {
                 </Grid>
             </Grid>
         </Grid>
+
     );
 }
