@@ -9,12 +9,12 @@ import {
     Typography,
 } from '@material-ui/core/';
 
-export function About(props) {
+export function ContactForm(props) {
     const classes = props.style()
-    console.log()
+
     return (
         <Grid container className={classes.secondaryGrid} ref={props.location}>
-            <Grid container justifyContent="center" alignContent="flex-start" >
+            <Grid container justifyContent="center" alignContent="flex-start">
                 <Grid item >
                     <Typography variant="h1" className={classes.primaryLG}>About Me.</Typography>
                     <Typography variant="h1" className={classes.primarySM}>
@@ -22,7 +22,7 @@ export function About(props) {
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid container justifyContent="center">
+            <Grid container justifyContent="center" >
                 <Grid item>
                     <ButtonGroup
                         variant="outlined"

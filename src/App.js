@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react'
 
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
-import { About, Landing, Nav } from "./components/index"
+import { About, Landing, Nav, Projects, ContactForm} from "./components/index"
 
 import "fontsource-roboto";
 import {
@@ -22,56 +22,56 @@ const theme = createTheme({
   }
 })
 
-// function ContactForm() {
-//   const [checked, setChecked] = React.useState(true)
-//   return (
-//     <FormControlLabel
-//       control={<Checkbox
-//         checked={checked}
-//         onChange={(e) => setChecked(e.target.checked)}
-//         inputProps={{
-//           "aria-label": "secondary checkbox"
-//         }}
-//       />}
-//       label="Testing testbox"
-//     />
 
-//   )
-// }
+const scrollToRef = (ref) => window.scrollTo({ top: ref.current.offsetTop, left: 0, behavior: 'smooth' })
 
 const useStyles = makeStyles({
   primaryLG: {
-      fontSize: "3rem",
-      [theme.breakpoints.up('md')]: {
-          fontSize: "7rem",
-      },
+    fontSize: "3rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "7rem",
+    },
   },
   primarySM: {
-      fontSize: "1rem",
-      [theme.breakpoints.up('md')]: {
-          fontSize: "2.5rem",
-      },
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "2.5rem",
+    },
   },
   secondarySM: {
-      fontSize: "1rem",
-      [theme.breakpoints.up('md')]: {
-          fontSize: "2rem",
-      },
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "2rem",
+    },
   },
   secondaryGrid: {
-      width: '100vw',
-      height: '100vh',
+    width: '100vw',
+    height: '100vh',
   }
 })
 
 function App() {
+  const home = useRef(null)
+  const about = useRef(null)
+  const projects = useRef(null)
+  const contact = useRef(null)
+
+  const executeScrollHome = () => scrollToRef(home)
+  const executeScrollAbout = () => scrollToRef(about)
+  const executeScrollProjects = () => scrollToRef(projects)
+  const executeScrollContact = () => scrollToRef(contact)
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl" disableGutters className="App">
-        <Nav style={useStyles}/>
         <Grid container>
-          <Landing style={useStyles}/>
-          <About style={useStyles}/>
+          <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
+
+          <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact}/>
+          <About style={useStyles} location={about}/>
+          <Projects style={useStyles} location={projects}/>
+          <ContactForm style={useStyles} location={contact}/>
+
         </Grid>
       </Container>
     </ThemeProvider>

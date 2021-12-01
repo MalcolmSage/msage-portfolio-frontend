@@ -13,7 +13,7 @@ import {
 export function Landing(props) {
     const classes = props.style()
     return (
-        <Grid container className={classes.secondaryGrid}>
+        <Grid container className={classes.secondaryGrid} ref={props.location}>
             <Grid container justifyContent="center" alignContent="flex-end">
                 <Grid item>
                     <Typography variant="h2" className={classes.primaryLG}>I'm <Typography display="inline" color="primary" className={classes.primaryLG}>Malcolm</Typography>.</Typography>
@@ -31,12 +31,14 @@ export function Landing(props) {
                         <Button
                             startIcon={<ArrowDownward />}
                             style={{ border: '2px solid' }}
+                            onClick={props.about}
                             color="primary">
                             About Me
                         </Button>
                         <Button
                             startIcon={<EmailRounded />}
                             variant="contained"
+                            onClick={props.contact}
                             color="primary">
                             Contact Me
                         </Button>
