@@ -45,6 +45,7 @@ export function Nav(props) {
                     id="fade-button"
                     aria-controls="fade-menu"
                     aria-haspopup="true"
+                    color="inherit"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
                 >
@@ -65,7 +66,7 @@ export function Nav(props) {
                     <MenuItem onClick={moveProfile}>Projects</MenuItem>
                     <MenuItem onClick={moveContact}>Contact</MenuItem>
                 </Menu>
-                <Typography className={classes.secondarySM} onClick={moveHome}>
+                <Typography className={classes.navText} onClick={moveHome}>
                     Malcolm Mayfield | Full Stack Developer
                 </Typography>
             </Toolbar>

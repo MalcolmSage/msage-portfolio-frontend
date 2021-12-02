@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
-import { About, Landing, Nav, Projects, ContactForm} from "./components/index"
+import { About, Landing, Nav, Projects, ContactForm } from "./components/index"
 
 import "fontsource-roboto";
 import {
@@ -38,16 +38,49 @@ const useStyles = makeStyles({
       fontSize: "2.5rem",
     },
   },
-  secondarySM: {
-    fontSize: "1rem",
+  secondaryLG: {
+    fontSize: "2.5rem",
     [theme.breakpoints.up('md')]: {
-      fontSize: "2rem",
+      fontSize: "5rem",
     },
   },
-  secondaryGrid: {
-    width: '100vw',
+  secondarySM: {
+    color: "white",
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "1.5rem",
+    },
+  },
+  primaryGrid: {
+    width: '90vw',
     height: '100vh',
-  }
+    margin:'auto',
+  },
+  secondaryGrid: {
+    width: '90vw',
+    height: '100vh',
+    margin:'auto',
+  },
+  sections: {
+    marginTop: "4rem"
+  },
+  card: {
+    backgroundColor: "transparent"
+  },
+  cardMedia: {
+    marginTop: '1rem',
+    width: '50%',
+    height: '50%',
+    borderRadius: '50%',
+    margin:'auto',
+  },
+  navText: {
+    color: "white",
+    fontSize: ".9rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "1.5rem",
+    },
+  },
 })
 
 function App() {
@@ -67,10 +100,10 @@ function App() {
         <Grid container>
           <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
 
-          <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact}/>
-          <About style={useStyles} location={about}/>
-          <Projects style={useStyles} location={projects}/>
-          <ContactForm style={useStyles} location={contact}/>
+          <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact} />
+          <About style={useStyles} location={about} />
+          <Projects style={useStyles} location={projects} />
+          <ContactForm style={useStyles} location={contact} />
 
         </Grid>
       </Container>

@@ -1,10 +1,11 @@
 import React from 'react';
-import { ArrowDownward, EmailRounded } from '@material-ui/icons';
 
 import "fontsource-roboto";
 import {
-    Button,
-    ButtonGroup,
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
     Grid,
     Typography,
 } from '@material-ui/core/';
@@ -13,34 +14,30 @@ export function About(props) {
     const classes = props.style()
     console.log()
     return (
-        <Grid container className={classes.secondaryGrid} ref={props.location}>
-            <Grid container justifyContent="center" alignContent="flex-start" >
-                <Grid item >
-                    <Typography variant="h1" className={classes.primaryLG}>About Me.</Typography>
-                    <Typography variant="h1" className={classes.primarySM}>
-                        A full-stack web-developer with a <Typography display="inline" color="primary" className={classes.primarySM}>passion</Typography> for innovation.
-                    </Typography>
-                </Grid>
-            </Grid>
-            <Grid container justifyContent="center">
+        <Grid container className={classes.secondaryGrid} ref={props.location} >
+            <Grid container justifyContent="center" alignContent="flex-start" className={classes.sections}>
                 <Grid item>
-                    <ButtonGroup
-                        variant="outlined"
-                        style={{ marginTop: "1rem" }}
-                        size="large">
-                        <Button
-                            startIcon={<ArrowDownward />}
-                            style={{ border: '2px solid' }}
-                            color="primary">
-                            About Me
-                        </Button>
-                        <Button
-                            startIcon={<EmailRounded />}
-                            variant="contained"
-                            color="primary">
-                            Contact Me
-                        </Button>
-                    </ButtonGroup>
+                    <Typography variant="h1" className={classes.secondaryLG} >About Me.</Typography>
+                </Grid>
+                <Grid container justifyContent="center" alignContent="flex-start">
+                    <Grid item md={6}>
+                        <Card elevation={0} className={classes.card}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    className={classes.cardMedia}
+                                    image="https://avatars.githubusercontent.com/u/80055719?v=4"
+                                    alt="Malcolm Mayfield"
+                                />
+                                <CardContent >
+                                    <Typography variant="h1" className={classes.secondarySM} >
+                                    As a forward-thinking software engineer with a background in public relations, I approach challenges with a combination of logic and creativity. Utilizing my years of experience working in collaborative environments across the globe, I am able to easily integrate within any team and immediately hit the ground running.                                     </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item style={{ backgroundColor: "red" }} md={6}>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

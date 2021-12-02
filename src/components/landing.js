@@ -13,7 +13,7 @@ import {
 export function Landing(props) {
     const classes = props.style()
     return (
-        <Grid container className={classes.secondaryGrid} ref={props.location}>
+        <Grid container className={classes.primaryGrid} ref={props.location}>
             <Grid container justifyContent="center" alignContent="flex-end">
                 <Grid item>
                     <Typography variant="h2" className={classes.primaryLG}>I'm <Typography display="inline" color="primary" className={classes.primaryLG}>Malcolm</Typography>.</Typography>
