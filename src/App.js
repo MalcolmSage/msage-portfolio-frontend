@@ -58,7 +58,7 @@ const useStyles = makeStyles({
   },
   secondaryGrid: {
     width: '90vw',
-    height: '100vh',
+    // height: '100vh',
     margin:'auto',
   },
   sections: {
@@ -81,6 +81,13 @@ const useStyles = makeStyles({
       fontSize: "1.5rem",
     },
   },
+  aboutIcon: {
+  },
+  aboutIconContainer: {
+    // [theme.breakpoints.up('md')]: {
+    //   padding: "8rem"
+    // },
+  }
 })
 
 function App() {
