@@ -18,24 +18,11 @@ export function Nav(props) {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+
+    const menuRoute = (location) => {
+        props[location]()
         setAnchorEl(null);
-    };
-    const moveHome = () => {
-        props.home();
-        handleClose();
-    }
-    const moveAbout = () => {
-        props.about();
-        handleClose();
-    }
-    const moveProfile = () => {
-        props.projects();
-        handleClose();
-    }
-    const moveContact = () => {
-        props.contact();
-        handleClose();
+
     }
     console.log()
     return (
@@ -58,15 +45,15 @@ export function Nav(props) {
                     }}
                     anchorEl={anchorEl}
                     open={open}
-                    onClose={handleClose}
+                    onClose={menuRoute}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem onClick={moveHome}>Home</MenuItem>
-                    <MenuItem onClick={moveAbout}>About Me</MenuItem>
-                    <MenuItem onClick={moveProfile}>Projects</MenuItem>
-                    <MenuItem onClick={moveContact}>Contact</MenuItem>
+                    <MenuItem onClick={()=>menuRoute("home")}>Home</MenuItem>
+                    <MenuItem onClick={()=>menuRoute("about")}>About Me</MenuItem>
+                    <MenuItem onClick={()=>menuRoute("projects")}>Projects</MenuItem>
+                    <MenuItem onClick={()=>menuRoute("contact")}>Contact</MenuItem>
                 </Menu>
-                <Typography className={classes.navText} onClick={moveHome}>
+                <Typography className={classes.navText} onClick={()=>menuRoute("home")}>
                     Malcolm Mayfield | Full Stack Developer
                 </Typography>
             </Toolbar>
