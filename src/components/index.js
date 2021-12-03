@@ -1,7 +1,7 @@
 import {About} from "./about"
 import {Landing}  from "./landing"
 import { Nav } from "./nav"
-import { Projects } from "./projects"
+import { Projects } from "./projects/projects"
 import { ContactForm } from "./contactForm"
 
 export {

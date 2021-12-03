@@ -26,20 +26,21 @@ export function Landing(props) {
                 <Grid item>
                     <ButtonGroup
                         variant="outlined"
+                        color="primary"
                         style={{ marginTop: "1rem" }}
                         size="large">
                         <Button
                             startIcon={<ArrowDownward />}
-                            style={{ border: '2px solid' }}
+                            className={classes.buttonOne}
                             onClick={props.about}
-                            color="primary">
+                            >
                             About Me
                         </Button>
                         <Button
                             startIcon={<EmailRounded />}
                             variant="contained"
                             onClick={props.contact}
-                            color="primary">
+                            >
                             Contact Me
                         </Button>
                     </ButtonGroup>

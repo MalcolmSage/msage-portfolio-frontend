@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 import { About, Landing, Nav, Projects, ContactForm } from "./components/index"
 
 import "fontsource-roboto";
@@ -14,10 +13,10 @@ import {
 const theme = createTheme({
   palette: {
     primary: {
-      main: green[800],
+      main: "rgb(46,125,50)",
     },
     secondary: {
-      main: green[500],
+      main: "rgb(46,125,50)",
     }
   }
 })
@@ -31,6 +30,12 @@ const useStyles = makeStyles({
     [theme.breakpoints.up('md')]: {
       fontSize: "7rem",
     },
+  },
+  buttonOne: {
+    border: '2px solid',
+    
+  },
+  buttonTwo: {
   },
   primarySM: {
     fontSize: "1rem",
@@ -54,12 +59,12 @@ const useStyles = makeStyles({
   primaryGrid: {
     width: '90vw',
     height: '100vh',
-    margin:'auto',
+    margin: 'auto',
   },
   secondaryGrid: {
     width: '90vw',
     // height: '100vh',
-    margin:'auto',
+    margin: 'auto',
   },
   sections: {
     marginTop: "4rem"
@@ -72,7 +77,7 @@ const useStyles = makeStyles({
     width: '50%',
     height: '50%',
     borderRadius: '50%',
-    margin:'auto',
+    margin: 'auto',
   },
   navText: {
     color: "white",
@@ -87,6 +92,46 @@ const useStyles = makeStyles({
     // [theme.breakpoints.up('md')]: {
     //   padding: "8rem"
     // },
+  },
+  projectCard: {
+    backgroundColor: "transparent",
+    width: "100vw",
+    [theme.breakpoints.up('md')]: {
+      width: "80vw",
+    },
+  },
+  projectContent: {
+    textAlign: "left",
+    color: "white",
+    position: "absolute",
+    backgroundColor: "rgba(0, 0, 0, 0.75)",
+    right: "0",
+    width: "45%",
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "2rem",
+      width: "35%",
+      backgroundColor: "transparent",
+    },
+  },
+  projectTextLG: {
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "2rem",
+    },
+  },
+  projectTextSM: {
+    fontSize: "1rem",
+    [theme.breakpoints.up('md')]: {
+      fontSize: "2rem",
+    },
+  },
+
+  projectPhoto: {
+    width: "75vw",
+    [theme.breakpoints.up('md')]: {
+      width: "50vw",
+    },
   }
 })
 
