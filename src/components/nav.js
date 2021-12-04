@@ -20,13 +20,16 @@ export function Nav(props) {
     };
 
     const menuRoute = (location) => {
-        props[location]()
-        setAnchorEl(null);
+        if (location === "home" || location === "about" || location === "projects" || location === "contact") {
+            props[location]()
+            setAnchorEl(null);
+        } else {
+            setAnchorEl(null);
+        }
 
     }
-    console.log()
     return (
-        <AppBar color="primary">
+        <AppBar color="primary" position="sticky" >
             <Toolbar >
                 <Button
                     id="fade-button"
@@ -48,12 +51,12 @@ export function Nav(props) {
                     onClose={menuRoute}
                     TransitionComponent={Fade}
                 >
-                    <MenuItem onClick={()=>menuRoute("home")}>Home</MenuItem>
-                    <MenuItem onClick={()=>menuRoute("about")}>About Me</MenuItem>
-                    <MenuItem onClick={()=>menuRoute("projects")}>Projects</MenuItem>
-                    <MenuItem onClick={()=>menuRoute("contact")}>Contact</MenuItem>
+                    <MenuItem onClick={() => menuRoute("home")}>Home</MenuItem>
+                    <MenuItem onClick={() => menuRoute("about")}>About Me</MenuItem>
+                    <MenuItem onClick={() => menuRoute("projects")}>Projects</MenuItem>
+                    <MenuItem onClick={() => menuRoute("contact")}>Contact</MenuItem>
                 </Menu>
-                <Typography className={classes.navText} onClick={()=>menuRoute("home")}>
+                <Typography className={classes.navText} onClick={() => menuRoute("home")}>
                     Malcolm Mayfield | Full Stack Developer
                 </Typography>
             </Toolbar>

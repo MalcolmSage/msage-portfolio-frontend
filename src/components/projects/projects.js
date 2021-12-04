@@ -41,18 +41,20 @@ const projects = [
 export function Projects(props) {
     const classes = props.style()
     return (
-        <Grid container className={classes.secondaryGrid} ref={props.location} >
-            <Grid container justifyContent="center" alignContent="flex-start" className={classes.sections} spacing={4}>
-                <Grid item xs={12}>
-                    <Typography variant="h1" className={classes.secondaryLG}>Projects</Typography>
-                </Grid>
-                <Grid item>
-                    <Grid container spacing={4}>
-                        {projects.map((item) => (
-                            <Grid item key={item.title}>
-                                <Project style={props.style} project={item} />
-                            </Grid>
-                        ))}
+        <Grid item>
+            <Grid container className={classes.secondaryGrid} ref={props.location} >
+                <Grid container justifyContent="center" alignContent="flex-start" className={classes.sections} spacing={4}>
+                    <Grid item xs={12}>
+                        <Typography variant="h1" className={classes.secondaryLG}>Projects</Typography>
+                    </Grid>
+                    <Grid item>
+                        <Grid container spacing={4}>
+                            {projects.map((item) => (
+                                <Grid item key={item.title}>
+                                    <Project style={props.style} project={item} />
+                                </Grid>
+                            ))}
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>

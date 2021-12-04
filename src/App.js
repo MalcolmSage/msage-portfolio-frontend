@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles';
-import { About, Landing, Nav, Projects, ContactForm } from "./components/index"
+import { About, Landing, Nav, Projects, ContactForm, Footer } from "./components/index"
 
 import "fontsource-roboto";
 import {
@@ -9,6 +9,7 @@ import {
   // FormControlLabel, 
   Grid,
 } from '@material-ui/core/';
+import { List, ListSubheader } from '@mui/material';
 
 const theme = createTheme({
   palette: {
@@ -16,9 +17,9 @@ const theme = createTheme({
       main: "rgb(46,125,50)",
     },
     secondary: {
-      main: "rgb(46,125,50)",
+      main: "rgb(999,999,999)",
     }
-  }
+  },
 })
 
 
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
   },
   buttonOne: {
     border: '2px solid',
-    
+
   },
   buttonTwo: {
   },
@@ -93,6 +94,9 @@ const useStyles = makeStyles({
     //   padding: "8rem"
     // },
   },
+  input: {
+    color: "white",
+  },
   projectCard: {
     backgroundColor: "transparent",
     width: "100vw",
@@ -150,14 +154,15 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl" disableGutters className="App">
         <Grid container>
-          <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
-
           <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact} />
+          <ListSubheader disableGutters style={{ width: "100vw" }}>
+            <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
+          </ListSubheader>
           <About style={useStyles} location={about} />
           <Projects style={useStyles} location={projects} />
           <ContactForm style={useStyles} location={contact} />
-
         </Grid>
+        <Footer style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
       </Container>
     </ThemeProvider>
   );

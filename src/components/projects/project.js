@@ -26,18 +26,18 @@ export function Project(props) {
                     />
                 </CardActionArea>
                 <CardContent className={classes.projectContent}>
-                    <Grid container spacing={1}>
+                    <Grid container>
                         <Grid item xs={12}>
                             <Typography variant="h1" className={classes.projectTextLG}>
                                 {project.title}
                             </Typography>
                         </Grid>
-                        <Grid item>
+                        <Grid item xs={12}>
                             <Typography variant="h1" className={classes.projectTextSM}>
                                 {project.content}
                             </Typography>
                         </Grid>
-                        <Grid item >
+                        <Grid item xs={12}>
                             <ButtonGroup
                                 color="primary"
                                 

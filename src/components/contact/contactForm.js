@@ -1,8 +1,10 @@
 import React from 'react';
-
+import Form from "./form"
 import "fontsource-roboto";
 import {
+    Box,
     Grid,
+    TextField,
     Typography,
 } from '@material-ui/core/';
 
@@ -12,11 +14,9 @@ export function ContactForm(props) {
     return (
         <Grid container className={classes.secondaryGrid} ref={props.location}>
             <Grid container justifyContent="center" alignContent="flex-start" className={classes.sections}>
-                <Grid item >
+                <Grid item xs={12} md={6}>
                     <Typography variant="h1" className={classes.secondaryLG}>Contact</Typography>
-                    <Typography variant="h1" className={classes.secondarySM}>
-                        A full-stack web-developer with a <Typography display="inline" color="primary" className={classes.primarySM}>passion</Typography> for innovation.
-                    </Typography>
+                    <Form style={props.style}/>
                 </Grid>
             </Grid>
         </Grid>
