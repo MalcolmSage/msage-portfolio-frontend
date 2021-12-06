@@ -1,4 +1,3 @@
-import react from "react"
 import "../styles/stars.css"
 
 function Stars() {

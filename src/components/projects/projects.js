@@ -1,18 +1,10 @@
 import React from 'react';
 import "fontsource-roboto";
 import {
-    Box,
     Grid,
     Typography,
 } from '@material-ui/core/';
 import { Project } from './project';
-
-function displayProjects(props) {
-
-    // return (
-
-    // )
-}
 
 const projects = [
     {

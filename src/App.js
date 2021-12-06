@@ -10,7 +10,7 @@ import {
   // FormControlLabel, 
   Grid,
 } from '@material-ui/core/';
-import { List, ListSubheader } from '@mui/material';
+import { ListSubheader } from '@mui/material';
 
 const theme = createTheme({
   palette: {
