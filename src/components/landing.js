@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
 import { ArrowDownward, EmailRounded } from '@material-ui/icons';
 
 import "fontsource-roboto";
@@ -14,7 +14,7 @@ export function Landing(props) {
     const classes = props.style()
     return (
         <Grid container className={classes.primaryGrid} ref={props.location} >
-            <Grid container justifyContent="center" alignContent="flex-end" >
+            <Grid container justifyContent="center" alignContent="center" >
                 <Grid item>
                     <Typography variant="h2" className={classes.primaryLG}>I'm <Typography display="inline" color="primary" className={classes.primaryLG}>Malcolm</Typography>.</Typography>
                     <Typography variant="h2" className={classes.primarySM}>

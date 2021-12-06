@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
+import "./styles/App.css"
 
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles';
-import { About, Landing, Nav, Projects, ContactForm, Footer } from "./components/index"
+import { About, Landing, Nav, Projects, ContactForm, Footer, Stars } from "./components/index"
 
 import "fontsource-roboto";
 import {
@@ -153,14 +154,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl" disableGutters className="App">
+        <Stars/>
         <Grid container>
           <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact} />
-          <ListSubheader disableGutters style={{ width: "100vw" }}>
+          <ListSubheader disableGutters style={{ width: "100%" }}>
             <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
           </ListSubheader>
           <About style={useStyles} location={about} />
           <Projects style={useStyles} location={projects} />
           <ContactForm style={useStyles} location={contact} />
+          
         </Grid>
         <Footer style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
       </Container>

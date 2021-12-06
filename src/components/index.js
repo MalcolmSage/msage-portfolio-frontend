@@ -4,6 +4,8 @@ import { Nav } from "./nav"
 import { Projects } from "./projects/projects"
 import { ContactForm } from "./contact/contactForm"
 import { Footer } from "./footer"
+import Stars from "./stars"
+
 
 export {
     About,
@@ -12,4 +14,5 @@ export {
     Nav,
     Projects,
     Footer,
+    Stars,
 }
