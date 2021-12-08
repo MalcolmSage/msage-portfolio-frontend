@@ -33,9 +33,9 @@ const projects = [
 export function Projects(props) {
     const classes = props.style()
     return (
-        <Grid item>
+        <Grid item xs={12}>
             <Grid container className={classes.secondaryGrid} ref={props.location} >
-                <Grid container justifyContent="center" alignContent="flex-start" className={classes.sections} spacing={4}>
+                <Grid container justifyContent="center" alignItems="center" className={classes.sections} spacing={4} >
                     <Grid item xs={12}>
                         <Typography variant="h1" className={classes.secondaryLG}>Projects</Typography>
                     </Grid>
