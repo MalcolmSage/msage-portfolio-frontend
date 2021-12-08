@@ -10,7 +10,6 @@ import {
     Grid,
     Typography,
 } from '@material-ui/core/';
-// import { Button, ButtonGroup } from '@mui/material';
 
 export function Project(props) {
     const classes = props.style()
@@ -40,11 +39,11 @@ export function Project(props) {
                         <Grid item xs={12}>
                             <ButtonGroup
                                 color="primary"
-                                
+
                             >
                                 <Button
                                     className={classes.buttonOne}
-                                    
+
                                 >
                                     Live
                                 </Button>

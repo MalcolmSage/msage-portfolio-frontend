@@ -14,7 +14,7 @@ export function Landing(props) {
     const classes = props.style()
     return (
         <Grid container className={classes.primaryGrid} ref={props.location} >
-            <Grid container justifyContent="center" alignContent="center" >
+            <Grid container justifyContent="center" alignContent="flex-end" >
                 <Grid item>
                     <Typography variant="h2" className={classes.primaryLG}>I'm <Typography display="inline" color="primary" className={classes.primaryLG}>Malcolm</Typography>.</Typography>
                     <Typography variant="h2" className={classes.primarySM}>
@@ -33,19 +33,21 @@ export function Landing(props) {
                             startIcon={<ArrowDownward />}
                             className={classes.buttonOne}
                             onClick={props.about}
-                            >
+                        >
                             About Me
                         </Button>
                         <Button
                             startIcon={<EmailRounded />}
                             variant="contained"
                             onClick={props.contact}
-                            >
+                        >
                             Contact Me
                         </Button>
                     </ButtonGroup>
+
                 </Grid>
             </Grid>
+
         </Grid>
 
     );

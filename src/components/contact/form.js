@@ -30,10 +30,8 @@ return (
         style={{ width: "100%" }}
         noValidate
         onSubmit={handleSubmit}
-
-
     >
-        <Card style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", marginBottom: "10rem" }}>
+        <Card style={{ backgroundColor: "rgba(0, 0, 0, 0.75)", marginBottom: "10rem" }}>
             <CardContent>
                 <Stack spacing={2}>
                     <TextField

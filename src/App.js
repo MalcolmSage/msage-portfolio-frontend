@@ -6,8 +6,6 @@ import { About, Landing, Nav, Projects, ContactForm, Footer, Stars } from "./com
 
 import "fontsource-roboto";
 import {
-  Container,
-  // FormControlLabel, 
   Grid,
 } from '@material-ui/core/';
 import { ListSubheader } from '@mui/material';
@@ -100,10 +98,6 @@ const useStyles = makeStyles({
   },
   projectCard: {
     backgroundColor: "transparent",
-    width: "100vw",
-    [theme.breakpoints.up('md')]: {
-      width: "80vw",
-    },
   },
   projectContent: {
     textAlign: "left",
@@ -152,21 +146,20 @@ function App() {
   const executeScrollContact = () => scrollToRef(contact)
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container maxWidth="xl" disableGutters className="App">
-        <Stars/>
-        <Grid container>
-          <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact} />
-          <ListSubheader disableGutters style={{ width: "100%" }}>
-            <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
-          </ListSubheader>
-          <About style={useStyles} location={about} />
-          <Projects style={useStyles} location={projects} />
-          <ContactForm style={useStyles} location={contact} />
-          
-        </Grid>
+    <ThemeProvider theme={theme} >
+
+      <Grid container className="App">
+        <Stars />
+
+        <Landing style={useStyles} location={home} about={executeScrollAbout} contact={executeScrollContact} />
+        <ListSubheader disableGutters style={{ width: "100%" }}>
+          <Nav style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
+        </ListSubheader>
+        <About style={useStyles} location={about} />
+        <Projects style={useStyles} location={projects} />
+        <ContactForm style={useStyles} location={contact} />
         <Footer style={useStyles} home={executeScrollHome} about={executeScrollAbout} projects={executeScrollProjects} contact={executeScrollContact} />
-      </Container>
+      </Grid>
     </ThemeProvider>
   );
 }
