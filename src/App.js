@@ -120,9 +120,9 @@ const useStyles = makeStyles({
     },
   },
   projectTextSM: {
-    fontSize: "1rem",
+    fontSize: ".8rem",
     [theme.breakpoints.up('md')]: {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
     },
   },
 

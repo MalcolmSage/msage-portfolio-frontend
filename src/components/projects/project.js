@@ -43,15 +43,16 @@ export function Project(props) {
                             >
                                 <Button
                                     className={classes.buttonOne}
-
+                                    onClick={() => window.open(project.live, '_blank')}
                                 >
                                     Live
                                 </Button>
                                 <Button
                                     variant="contained"
                                     className={classes.buttonTwo}
+                                    onClick={() => window.open(project.git, '_blank')}
                                 >
-                                    Docs
+                                    Git
                                 </Button>
                             </ButtonGroup>
                         </Grid>

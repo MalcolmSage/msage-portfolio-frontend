@@ -1,38 +1,45 @@
-import * as React from 'react';
-import { Box, Button, Card, CardContent, Grid, TextField } from '@material-ui/core';
-import { useForm, ValidationError } from '@formspree/react';
+import React from "react";
+import { Box, Button, Card, CardContent, Grid, TextField} from '@material-ui/core';
+import { useForm } from '@formspree/react';
 import { Stack } from '@mui/material';
 
 import { Send } from '@material-ui/icons';
 
-export default function Form(props) {
-    const [name, setName] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [message, setMessage] = React.useState('');
-    const [state, handleSubmit] = useForm(process.env.REACT_APP_FORM_ENDPOINT);
+import Alert from '@mui/material/Alert';
 
-    const handleChangeName = (event) => {
-        setName(event.target.value);
-    };
-    const handleChangeEmail = (event) => {
-        setEmail(event.target.value);
-    };
-    const handleChangeMessage = (event) => {
-        setMessage(event.target.value);
+export default function Form(props) {
+    const { useState } = React;
+
+    const initialState = {
+        name: "",
+        _replyto: "",
+        message: "",
+    }
+
+    const [
+        { name, _replyto, message },
+        setState
+    ] = useState(initialState)
+
+    const [state, handleSubmit] = useForm(process.env.REACT_APP_FORM_ENDPOINT, {});
+
+    const onChange = e => {
+        const { name, value } = e.target;
+        setState(prevState => ({ ...prevState, [name]: value }));
     };
 
     const classes = props.style()
 
-return (
+    return (
 
-    <Box
-        component="form"
-        style={{ width: "100%" }}
-        noValidate
-        onSubmit={handleSubmit}
-    >
-        <Card style={{ backgroundColor: "rgba(0, 0, 0, 0.75)", marginBottom: "10rem" }}>
-            <CardContent>
+        <Box
+            component="form"
+            style={{ width: "100%" }}
+            noValidate
+            onSubmit={handleSubmit}
+        >
+            <Card style={{ backgroundColor: "rgba(0, 0, 0, 0.75)", marginBottom: "10rem" }}>
+                {state.succeeded !== true ? <CardContent>
                 <Stack spacing={2}>
                     <TextField
                         id="name"
@@ -44,20 +51,21 @@ return (
                         InputProps={{
                             className: classes.input
                         }}
-                        onChange={handleChangeName}
+                        onChange={onChange}
                         color="secondary"
                     />
+                    {state.errors.length !== 0 ? <Alert severity="error">Check your email</Alert> : ""}
                     <TextField
                         id="email"
-                        label="Email"
+                        label="email"
                         name="_replyto"
                         focused
                         color="secondary"
-                        value={email}
+                        value={_replyto}
                         InputProps={{
                             className: classes.input
                         }}
-                        onChange={handleChangeEmail}
+                        onChange={onChange}
                     />
                     <TextField
                         id="message"
@@ -72,7 +80,7 @@ return (
                         }}
                         rows={5}
                         value={message}
-                        onChange={handleChangeMessage}
+                        onChange={onChange}
                     />
                 </Stack>
                 <Grid container justifyContent="flex-end">
@@ -82,8 +90,10 @@ return (
                         </Button>
                     </Grid>
                 </Grid>
-            </CardContent>
-        </Card>
-    </Box>
-);
+            </CardContent> : 
+            <Alert severity="success">Thank you for reaching out! I will be in touch.</Alert>
+            }
+            </Card>
+        </Box>
+    );
 }
