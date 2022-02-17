@@ -57,7 +57,7 @@ export default function Form(props) {
                     {state.errors.length !== 0 ? <Alert severity="error">Check your email</Alert> : ""}
                     <TextField
                         id="email"
-                        label="email"
+                        label="Email"
                         name="_replyto"
                         focused
                         color="secondary"

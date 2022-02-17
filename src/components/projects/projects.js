@@ -10,7 +10,7 @@ const projects = [
     {
         title: "G.R.I.T.",
         content: "A Front-End application that leverages the Github API. Built with JavaScript, React and Material UI",
-        image: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
+        image: "https://user-images.githubusercontent.com/80055719/154380500-92736cb1-b38d-4740-8258-b8bca0a10b12.png",
         live: "https://msagegrit.netlify.app/",
         git: "https://github.com/MalcolmSage/github-comparison-frontend"
     },

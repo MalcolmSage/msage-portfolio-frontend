@@ -47,7 +47,7 @@ export function About(props) {
                                         />
                                         <CardContent >
                                             <Typography className={classes.secondarySM} >
-                                                As a forward-thinking software engineer with a background in public relations, I approach challenges with a combination of logic and creativity. Utilizing my years of experience working in collaborative environments across the globe, I am able to easily integrate within any team and immediately hit the ground running.                                     </Typography>
+                                            As a forward-thinking software engineer with a background in public relations, I approach challenges with a combination of logic and creativity. Utilizing my years of experience working in collaborative environments across the globe, I am able to easily integrate within any team and immediately hit the ground running.                                     </Typography>
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
