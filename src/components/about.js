@@ -38,7 +38,7 @@ export function About(props) {
                         <Grid container justifyContent="center" alignItems="flex-start" >
                             <Grid item md={10}>
                                 <Card elevation={0} className={classes.card}>
-                                    <CardActionArea>
+                                    <CardActionArea onClick={() => window.open("https://www.linkedin.com/in/malcolm-sage/", '_blank')}>
                                         <CardMedia
                                             component="img"
                                             className={classes.cardMedia}

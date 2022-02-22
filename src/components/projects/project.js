@@ -17,7 +17,7 @@ export function Project(props) {
     return (
         <Card elevation={0} className={classes.projectCard}>
             <Box sx={{ display: 'flex' }} >
-                <CardActionArea className={classes.projectPhoto}>
+                <CardActionArea className={classes.projectPhoto} onClick={() => window.open(project.live, '_blank')}>
                     <CardMedia
                         component="img"
                         image={project.image}

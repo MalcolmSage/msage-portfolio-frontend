@@ -17,7 +17,7 @@ const projects = [
     {
         title: "Marvel Heroes",
         content: "A Marvel Hero search engine. Built with JavaScript, React and Material UI",
-        image: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg",
+        image: "https://user-images.githubusercontent.com/80055719/155143569-35ed8c22-9624-4033-8621-b429ba1b777f.png",
         live: "https://msagemarvelsearch.netlify.app/",
         git: "https://github.com/MalcolmSage/marvel-search-frontend"
     },
